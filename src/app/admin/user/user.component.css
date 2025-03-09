@@ -1,0 +1,74 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: rgb(238, 238, 238);
+  }
+  
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;        
+    align-items: center;           
+    height: 100%;                  
+    text-align: center;            
+    padding: 20px;
+  }
+
+  .profile-section, .data-binding-section {
+    width: 100%;
+    max-width: 600px;           
+    padding: 5px;
+    margin-bottom: 1px;         
+  }
+
+  .data-binding-section li {
+    color: #757575;
+  }
+
+  .add-user label {
+    color: #757575;
+  }
+  
+  h1, h3, h4 {
+    margin: 10px 0;
+    font-size: 2rem;
+    color: palevioletred;
+  }
+  
+  p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color:#757575;
+  }
+  
+  button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #88b1e7;
+  }
+  
+  input {
+    padding: 10px;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: #1a73e8;
+  }
+  
