@@ -1,1 +1,92 @@
-<p>post works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Share Your Thoughts</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+  <div class="post bg-white shadow-lg rounded-lg p-8 max-w-xl w-full">
+    <h2 class="text-2xl font-bold text-gray-800 mb-6">Share Your Thoughts</h2>
+
+    <!-- Form to Add New Post -->
+    <div class="add-post mb-6">
+      <h3 class="text-xl font-semibold text-gray-700 mb-4">Add a New Post</h3>
+      <div class="flex flex-col space-y-4">
+        <label class="block">
+          <span class="text-gray-600">Title:</span>
+          <input 
+            [(ngModel)]="newPost.title" 
+            placeholder="Enter post title" 
+            class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
+          />
+        </label>
+        <label class="block">
+          <span class="text-gray-600">Content:</span>
+          <textarea 
+            [(ngModel)]="newPost.content" 
+            placeholder="Enter post content" 
+            class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none resize-none h-24"
+          ></textarea>
+        </label>
+        <label class="block">
+          <span class="text-gray-600">Image:</span>
+          <input 
+            type="file" 
+            (change)="onImageSelected($event)" 
+            class="block w-full text-gray-600 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:bg-gray-100 file:text-gray-600 hover:file:bg-gray-200"
+          />
+        </label>
+        <div *ngIf="newPost.image" class="image-preview mt-4">
+          <h4 class="text-gray-700 font-medium mb-2">Image Preview:</h4>
+          <img 
+            [src]="newPost.image" 
+            alt="Preview" 
+            class="w-full rounded-lg shadow-md"
+          />
+        </div>
+      </div>
+      <button 
+        (click)="addPost()" 
+        class="mt-6 bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600"
+      >
+        Add Post
+      </button>
+    </div>
+
+    <hr class="my-6 border-gray-300" />
+
+    <!-- Display Existing Posts -->
+    <ul class="space-y-6">
+      <li 
+        *ngFor="let post of posts" 
+        class="bg-gray-50 rounded-lg p-4 shadow-sm"
+      >
+        <h4 
+          (click)="togglePost(post)" 
+          class="text-lg font-semibold text-blue-600 cursor-pointer hover:underline"
+        >
+          {{ post.title }}
+        </h4>
+        <div *ngIf="post.visible" class="post-content mt-4">
+          <p class="text-gray-700 mb-4">{{ post.content }}</p>
+          <img 
+            *ngIf="post.image" 
+            [src]="post.image" 
+            alt="Post Image" 
+            class="w-full rounded-lg shadow-md"
+          />
+        </div>
+      </li>
+    </ul>
+
+    <button 
+      class="mt-6 bg-gray-500 text-white px-6 py-2 rounded-lg hover:bg-gray-600" 
+      (click)="navigateBack()"
+    >
+      Back to Home
+    </button>
+  </div>
+</body>
+</html>

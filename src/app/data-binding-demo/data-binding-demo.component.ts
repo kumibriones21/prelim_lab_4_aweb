@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class DataBindingDemoComponent {
   message="My First App!"
-  description="This is my new Angular Application"
+  description="This is my new Angular Application - Data Binding Demo"
   imageUrl = '../images/angular.jpg';
   w = 100;
   h = 100;
