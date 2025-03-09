@@ -1,1 +1,53 @@
-<p>home works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Social Space</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[rgb(238,238,238)] text-gray-800 flex items-center justify-center min-h-screen">
+  <div class="w-full max-w-4xl p-8">
+    <br>
+    <h1 class="text-3xl font-bold text-center text-blue-600">Welcome to My Social Space!</h1>
+
+    <div class="image-container">
+      <img class="w-32 h-32 rounded-full border-4 border-blue-400 mx-auto mt-6" src="{{ ProfileUrl }}" alt="{{ altText }}">
+    </div>
+
+    <h4 class="text-center text-lg font-medium text-gray-600 mt-4">{{ introduction }}</h4>
+
+    <h3 class="text-2xl font-semibold text-gray-700 mt-8 text-center">My Interests</h3>
+    <ul class="list-disc list-inside mt-2 space-y-1 text-center">
+      <li class="text-gray-600" *ngFor="let interest of interests">{{ interest }}</li>
+    </ul>
+
+    <h3 class="text-2xl font-semibold text-gray-700 mt-8 text-center">My Recent Projects</h3>
+    <ul class="space-y-2 mt-2 text-center">
+      <li *ngFor="let project of projects" class="text-gray-600">
+        <a class="text-blue-500 hover:underline" href="{{ project.link }}" target="_blank">{{ project.name }}</a> - {{ project.description }}
+      </li>
+    </ul>
+
+    <h3 class="text-2xl font-semibold text-gray-700 mt-8 text-center">Contact Me</h3>
+    <div class="mt-2 text-gray-600 text-center">
+      <p>Email: <a class="text-blue-500 hover:underline" href="mailto:kumibriones21@gmail.com">kumibriones21&#64;gmail.com</a></p>
+      <p>Follow me on: 
+        <a class="text-blue-500 hover:underline" href="https://twitter.com/qmionee" target="_blank">Twitter</a> | 
+        <a class="text-blue-500 hover:underline" href="https://www.instagram.com/qmioneee/" target="_blank">Instagram</a> | 
+        <a class="text-blue-500 hover:underline" href="https://www.linkedin.com/in/alyanna-cyrelle-kumi-briones-50a221329/" target="_blank">LinkedIn</a>
+      </p>
+    </div>
+
+    <h3 class="text-2xl font-semibold text-gray-700 mt-8 text-center">Favorite Quote</h3>
+    <p class="italic text-gray-600 mt-2 text-center">"Don’t rush. Take a deep breath. Go at your own pace, steadily. Take it one step at a time. Any moment can be an opportunity." – Jin</p>
+
+    <h3 class="text-2xl font-semibold text-gray-700 mt-8 text-center">Explore More</h3>
+    <ul class="flex flex-wrap justify-center gap-4 mt-4 text-center">
+      <li *ngFor="let feature of features">
+        <button class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600" (click)="navigateTo(feature.toLowerCase())">{{ feature }}</button>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>

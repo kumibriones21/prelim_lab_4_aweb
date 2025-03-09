@@ -2,3 +2,36 @@
     background-color: pink;;
     color: darkblue;
 }
+
+/* The container for centering content */
+.center-container {
+    display: flex;                
+    flex-direction: column;       
+    justify-content: center;     
+    align-items: center;       
+    height: 100vh;               
+    text-align: center;       
+    padding: 20px;               
+  }
+
+  /* Styling for the buttons */
+  button {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #357ab7;
+  }
+  
+  img {
+    margin: 10px 0;
+    max-width: 100%; 
+  }
+  

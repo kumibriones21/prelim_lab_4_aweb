@@ -1,0 +1,46 @@
+/* The container for centering content */
+.center-container {
+    display: flex;                
+    flex-direction: column;      
+    justify-content: center;    
+    align-items: center;         
+    height: 100vh;             
+    text-align: center;         
+    padding: 20px;              
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  /* Styling for unordered list */
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+  }
+  
+  /* Styling for the list items */
+  li {
+    background-color: #f4f4f4;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  /* Optional: Highlighting when condition is true */
+  .highlighted {
+    color: green;
+    font-weight: bold;
+  }
+  
+  /* Styling for the ngIf blocks */
+  div, ng-template {
+    margin: 10px 0;
+  }
+  
+  /* Optional: Style for the template contents */
+  ng-template {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
